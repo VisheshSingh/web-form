@@ -1,17 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>Vue forms</h1>
+  <form>
+    <label for="email">Email</label>
+    <input type="email" v-model="email" />
+  </form>
+
+  <p>Email: {{ email }}</p>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  components: {},
+  data() {
+    return {
+      email: '',
+    };
+  },
+};
 </script>
 
 <style>
@@ -22,5 +28,32 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+body {
+  margin: 0;
+  background: #eee;
+}
+form {
+  max-width: 420px;
+  background: #fff;
+  padding: 40px;
+  margin: 30px auto;
+  border-radius: 20px;
+  text-align: left;
+}
+label {
+  display: inline-block;
+  color: #aaa;
+  text-transform: uppercase;
+  font-weight: 1.2rem;
+}
+input {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  margin: 15px 0;
+  box-sizing: border-box;
 }
 </style>
